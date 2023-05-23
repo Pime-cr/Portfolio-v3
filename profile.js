@@ -1,42 +1,3 @@
-export const skills = [
-    {
-        skill:'Javascript',
-        percentege:80
-    },
-    {
-        skill:'Html5',
-        percentege:50
-    },
-    {
-        skill:'CSS',
-        percentege:65
-    },
-    {
-        skill:'React',
-        percentege:80
-    },
-    {
-        skill:'Redux',
-        percentege:100
-    },
-    {
-        skill:'Postgress',
-        percentege:100
-    },
-    {
-        skill:'Node.js',
-        percentege:100
-    },
-    {
-        skill:'Express',
-        percentege:100
-    },
-    {
-        skill:'Sequelize',
-        percentege:100
-    },
-]
-
 export const experiences = [
     {
       title: "Software developer at Microsoft",
@@ -89,20 +50,24 @@ export const experiences = [
       name: "Landing Page",
       description:
       "Basic example of a landing page build on Tailwind course",
-      image: "portfolio5.jpeg",
+      image: "basicLP.jpeg",    
+      href:"https://basic-landing-page-smoky.vercel.app/",
+      repository:"https://github.com/Pime-cr/Basic-landing-page"
     },
     {
       name: "Firefox Landing Page",
       description:
       "Replica de la pagina de descarga de Firefox",
-      image: "portfolio6.jpeg",
-    },
+      image: "firefoxLP.jpeg",
+      repository:"https://github.com/Pime-cr/Firefox-landing-page",
+      href:"https://firefox-landing-page.vercel.app/"
+    },/* 
     {
       name: "Henry food",
       description:
         "Lorem,  porro quisquam voluptatem",
       image: "portfolio4.png",
-    },
+    }, */
   ];
   
   export const posts = [

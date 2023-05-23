@@ -5,7 +5,7 @@ const Skills = () => {
                 <h2 className="text-3xl text-center font-medium underline underline-offset-5 ">Skills
                 </h2>
             </div>
-            <div className="p-5 grid grid-cols-3 gap-4 md:grid-cols-4 md:gap-10 lg:gap-24 lg:grid-cols-6 xl:grid-cols-8">
+            <div className="p-5 grid grid-cols-3 gap-4 md:grid-cols-4 md:gap-10 lg:gap-24 lg:grid-cols-6 ">
                 <div className="w-auto h-auto">
                     <img src="skills-images/html5.png" alt="html" />
                 </div>
