@@ -1,12 +1,36 @@
 import Link from 'next/link'
+import { useState,useEffect, useCallback } from 'react';
+import { useTheme } from 'next-themes'
+import Image from 'next/image';
+import useLanguage from '@/hooks/useLanguaje';
+
 const NavBar = () => {
+    const [mounted , setMounted] = useState(false)
+    const {theme , setTheme , systemTheme} = useTheme()
+    const {lang , setSpanish , setEnglish} = useLanguage()
+
+    useEffect(()=>{
+        setMounted(true)
+    },[])
+
+    if (!mounted) return null
+
+    const currentTheme = theme === 'system' ? systemTheme : theme
+
+    console.log(lang)
+
+    const Switcher = ()=>{
+         if (lang === "Spanish") setEnglish()
+         else setSpanish()
+    }
+
     return ( 
-       <nav className='z-20 bg-white dark:bg-slate-800 fixed md:static w-full md:auto border-b md:border-none shadow-lg md:shadow-none dark:border-none'>
+       <nav className='z-20 bg-violet-700 dark:bg-slate-800 fixed md:static w-full md:auto border-b md:border-none shadow-lg md:shadow-none dark:border-none'>
             <div className='p-6 container mx-auto'>
                 <div className='flex items-center justify-between'>
                     <div className='z-20'>
                         <a href="" className='flex items-center'>
-                            <img src="personalLogo2.png" alt="Logo" className='w-20 h-14 object-cover object-center'/>
+                            <img src="personalLogo2.png" alt="Logo" className='w-20 h-14 object-cover object-center text-black'/>
                         </a>
                     </div>
 
@@ -22,9 +46,28 @@ const NavBar = () => {
                         {/* enlaces */}
                         <div className='bg-white dark:bg-slate-900 md:bg-slate-800 w-3/5 shadow-lg transition flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:shadow-none md:translate-x-0 md:flex-row'>
                             <div className='px-6 pt-32 flex flex-col md:flex-row md:items-center gap-3 md:p-0'>
-                                <a href="" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>About</a>
-                                <a href="" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>Skills</a>
-                                <a href="#projects" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>Proyects</a>
+                                <a href="" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                {lang === "Spanish" ? (<div>Sobre mi</div>) : (<div>About</div>)}</a>
+                                <a href="" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                {lang === "Spanish" ? (<div>Tecnologias</div>) : (<div>Skills</div>)}</a>
+                                <a href="#projects" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                {lang === "Spanish" ? (<div>Proyectos</div>) : (<div>Proyects</div>)}</a>
+                                <button onClick={()=>setTheme(currentTheme === 'dark' ? 'light' : 'dark')} className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                    {currentTheme === 'light' ? (
+                                        <div className='flex flex-row justify-between'>
+                                            <div>Dark</div>
+                                            <Image src="/moon.svg" alt="logo" color='white'  width={20} height={20}/>
+                                        </div>
+                                    ) : (
+                                        <div className=' flex flex-row justify-between'>
+                                            <div>Light</div>
+                                            <Image src="/sun.svg" alt="logo" width="20" height="20" className='text-white'/>
+                                        </div>
+                                    )}
+                                </button>
+                                <button onClick={Switcher} className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                    {lang === "Spanish" ? (<div>English</div>) : (<div>Español</div>)}
+                                </button>
                             </div>
                         {/* nav bottom */}
                             <div className="block md:hidden border-t py-8 px-6 md:border-t-0 dark:border-slate-700 md:py-0

@@ -9,7 +9,7 @@ import Skills from '@/components/Skills'
 
 export default function Home() {
   return (
-    <div className='bg-white text-slate-800 dark:bg-penn-blue dark:text-white '>
+    <div className=' bg-white text-slate-800 dark:bg-penn-blue dark:text-white '>
 
       <NavBar/>
         <Header />

@@ -1,6 +1,6 @@
 const Footer = () => {
     return ( 
-        <div className="bg-white dark:bg-slate-800 w-full h-min p-5 mt-2 relative">
+        <div className="bg-violet-700 dark:bg-slate-800 w-full h-min p-5 mt-2 relative text-white">
             <h1 className="text-xl lg:text-4xl text-center">Cristian Pimentel </h1>
             <p className="text-xl text-center">2022 - {new Date().getFullYear()}</p>
             <div className='z-20 absolute right-2 bottom-1/2 top-1/4'>

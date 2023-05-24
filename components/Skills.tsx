@@ -1,8 +1,11 @@
+import useLanguage from "@/hooks/useLanguaje";
+
 const Skills = () => {
+    const {lang} = useLanguage()
     return ( 
         <div className="flex flex-col m-1">
             <div>
-                <h2 className="text-3xl text-center font-medium underline underline-offset-5 ">Skills
+                <h2 className="text-3xl text-center font-medium underline underline-offset-5 ">{lang === 'Spanish'? "Tecnologias" :"Skills"}
                 </h2>
             </div>
             <div className="p-5 grid grid-cols-3 gap-4 md:grid-cols-4 md:gap-10 lg:gap-24 lg:grid-cols-6 ">
