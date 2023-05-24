@@ -1,4 +1,4 @@
-import { experiences } from "@/profile";
+/* import { experiences } from "@/profile";
 
 const ExperienceView = () => {
     return ( 
@@ -19,4 +19,4 @@ const ExperienceView = () => {
      );
 }
  
-export default ExperienceView;
+export default ExperienceView; */
