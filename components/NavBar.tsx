@@ -25,7 +25,7 @@ const NavBar = () => {
     }
 
     return ( 
-       <nav className='z-20 bg-violet-700 dark:bg-slate-800 fixed md:static w-full md:auto border-b md:border-none shadow-lg md:shadow-none dark:border-none'>
+       <nav className='z-20 bg-violet-700 dark:bg-slate-800 fixed md:static w-full md:auto border-b md:border-none shadow-lg md:shadow-none dark:border-none scroll-pt-10'>
             <div className='p-6 container mx-auto'>
                 <div className='flex items-center justify-between'>
                     <div className='z-20'>
@@ -44,13 +44,13 @@ const NavBar = () => {
                         </label>
 
                         {/* enlaces */}
-                        <div className='bg-white dark:bg-slate-900 md:bg-slate-800 w-3/5 shadow-lg transition flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:shadow-none md:translate-x-0 md:flex-row'>
+                        <div className='bg-white dark:bg-slate-900 dark:md:bg-slate-800 md:text-white md:bg-violet-700 w-3/5 shadow-lg transition flex flex-col justify-between fixed inset-0 translate-x-[-100%] peer-checked:translate-x-0 md:w-auto md:static md:shadow-none md:translate-x-0 md:flex-row'>
                             <div className='px-6 pt-32 flex flex-col md:flex-row md:items-center gap-3 md:p-0'>
-                                <a href="" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                <a href="#about" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
                                 {lang === "Spanish" ? (<div>Sobre mi</div>) : (<div>About</div>)}</a>
-                                <a href="" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                <a href="#skills" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
                                 {lang === "Spanish" ? (<div>Tecnologias</div>) : (<div>Skills</div>)}</a>
-                                <a href="#projects" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
+                                <a href="#projects" className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500 '>
                                 {lang === "Spanish" ? (<div>Proyectos</div>) : (<div>Proyects</div>)}</a>
                                 <button onClick={()=>setTheme(currentTheme === 'dark' ? 'light' : 'dark')} className='tracking-wide cursor-pointer px-3 py-2 rounded font-semibold text-lg transition hover:text-white hover:bg-blue-500'>
                                     {currentTheme === 'light' ? (
